@@ -6,7 +6,7 @@
 ##  1. Setting up the Vector Database (Qdrant)
 The vector database is responsible for semantic search across your document chunks.
 
-    Start the Container: Use the script qdrant-start.docker.sh to launch Qdrant as a persistent Docker container with an automatic restart policy (--restart always).
+Start the Container: Use the script qdrant-start.docker.sh to launch Qdrant as a persistent Docker container with an automatic restart policy (--restart always).
     Create the Collection: Run qdrant-neuanlegen.sh to initialize the docmost-rag collection. This is pre-configured with 768 dimensions and the Cosine metric, matching standard embedding models.
     Verify Connectivity: You can test the Qdrant API at http://xxx.xxx.xxx.xxx:6333 using simple-search.sh to perform a test query.
 
@@ -52,7 +52,7 @@ debug-log.py
 Provides diagnostics and protocol logging.
 Note: Ensure that ports 6333 (Qdrant) and 5432 (PostgreSQL) are open and accessible at your specified IP xxx.xxx.xxx.xxx for these scripts to function correctly. #EOF
 
-
+-----
 
 ###  [DEU] Brainagent ist ein OpenAI-kompatibler Context-Proxy für  LLMs. Er kombiniert SQL, Vektorsuche und Plugins, bevor eine Anfrage an das eigentliche Modell weitergeleitet wird.  
 
@@ -110,6 +110,9 @@ debug-log.py
 	
 Tool zur Fehlerdiagnose und Protokollierung.
 Wichtig: Stelle sicher, dass die Ports für Qdrant (standardmäßig 6333) und PostgreSQL (standardmäßig 5432) auf den Ziel-IPs xxx.xxx.xxx.xxx für die Skripte erreichbar sind. #EOF
+
+
+Powered by ai 
 
 
 
