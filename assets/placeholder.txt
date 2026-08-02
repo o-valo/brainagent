@@ -1,1 +1,11 @@
 
+LLMs haben leider die blöde Angewohnheit, öfter als einem lieb ist, zu
+halluzinieren. Der Brainagent ist mein Ansatz, dies möglichst mittels
+hybridem RAG zu verhindern bzw. stark zu minimieren – denn 100 % kann das
+niemand garantieren. Bei Interesse guckt einfach mal rein und lasst am
+besten einen Stern da :-)
+
+https://github.com/o-valo/brainagent
+
+Das System läuft auf Ubuntu Linux, lässt sich aber problemlos auch unter 
+Windows mit WSL zum Laufen bringen.
