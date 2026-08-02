@@ -3,6 +3,57 @@
 
 [Why the Brainagant was created. ](./brainagent-why.md).
 
+##  1. Setting up the Vector Database (Qdrant)
+The vector database is responsible for semantic search across your document chunks.
+
+    Start the Container: Use the script qdrant-start.docker.sh to launch Qdrant as a persistent Docker container with an automatic restart policy (--restart always).
+    Create the Collection: Run qdrant-neuanlegen.sh to initialize the docmost-rag collection. This is pre-configured with 768 dimensions and the Cosine metric, matching standard embedding models.
+    Verify Connectivity: You can test the Qdrant API at http://xxx.xxx.xxx.xxx:6333 using simple-search.sh to perform a test query.
+
+2. Relational Backend (PostgreSQL) & Data Sync
+The PostgreSQL database handles the "SQL-First" logic to ensure exact fact-finding from metadata.
+
+    Configuration: Ensure your scripts are pointed to your database host at xxx.xxx.xxx.xxx. The default setup expects a database named rag_db.
+    Initial Data Import: Use sql-reset-import.py to clear the docmost_files table and synchronize Markdown files from your source directory (e.g., /mnt/data). This script strictly enforces the #EOF marker rule for all imported files.
+    Health Check: Run sql-health-check.py to confirm the database at xxx.xxx.xxx.xxx is reachable and the table structures are correct.
+
+3. RAG Pipeline & Vector Indexing
+Once the metadata is in the SQL database, you must index the content for semantic retrieval.
+
+    Indexing Documents: Execute rag_manager.py. This script reads the Markdown files, creates overlapping text chunks (to prevent information loss at boundaries), and performs a vector upsert into Qdrant.
+    Monitor Status: Use check-rag.py to verify the total count of indexed vectors and ensure the collection status is healthy.
+
+4. Starting the Brainagent Flask Proxy
+This is the core middleware component that processes incoming requests.
+
+    Environment Setup: Before starting, export the URL for your embedding model (e.g., your Ollama instance): export EMBEDDING_URL="http://xxx.xxx.xxx.xxx:11434".
+    Start the Server: Launch the proxy using granit-brainagent.py (or brainagent.py as found in the repository).
+    How it Works: The proxy receives a request, executes a cleaned SQL search first, enriches it with RAG context if needed, and then forwards the augmented prompt to the LLM.
+
+Overview of Key Scripts
+All scripts are designed to maintain data integrity through automated checks:
+Script
+	
+Purpose
+qdrant-start.docker.sh
+	
+Launches the Qdrant vector database container.
+sql-reset-import.py
+	
+Syncs Markdown files to PostgreSQL with #EOF validation.
+rag_manager.py
+	
+Handles chunking and vector upserts into Qdrant.
+punkte-loeschen.sh
+	
+Deletes specific vector points (IDs) from the collection.
+debug-log.py
+	
+Provides diagnostics and protocol logging.
+Note: Ensure that ports 6333 (Qdrant) and 5432 (PostgreSQL) are open and accessible at your specified IP xxx.xxx.xxx.xxx for these scripts to function correctly. #EOF
+
+
+
 ###  [DEU] Brainagent ist ein OpenAI-kompatibler Context-Proxy für  LLMs. Er kombiniert SQL, Vektorsuche und Plugins, bevor eine Anfrage an das eigentliche Modell weitergeleitet wird.  
 
 [Warum de rBrainagent entstanden ist. ](./de-brainagent-warum.md).
