@@ -7,7 +7,7 @@
 
 [Warum de rBrainagent entstanden ist. ](./de-brainagent-warum.md).
 
-Anleitung: 
+## Anleitung: 
 Brainagent: Installations- und Konfigurationsleitfaden
 Der Brainagent fungiert als Middleware-Proxy, der Anfragen an LLMs (wie Ollama) durch eine Kombination aus relationaler SQL-Suche und Vektor-RAG (Retrieval-Augmented Generation) mit Kontext anreichert.
 1. Vektordatenbank (Qdrant) einrichten
