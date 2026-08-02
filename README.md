@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/brainagent.jpg" alt="Brainagent Banner" width="100%">
+</p>
+
 # brainagent
 ### [ENG]  OpenAI-compatible Context Proxy combining SQL, vector search and plugins for LLMs. 
 
