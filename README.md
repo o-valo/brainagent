@@ -112,12 +112,6 @@ Tool zur Fehlerdiagnose und Protokollierung.
 Wichtig: Stelle sicher, dass die Ports für Qdrant (standardmäßig 6333) und PostgreSQL (standardmäßig 5432) auf den Ziel-IPs xxx.xxx.xxx.xxx für die Skripte erreichbar sind. #EOF
 
 
-Powered by ai 
-
-
-
-
-
 
 
 Powerd with ai :-)
