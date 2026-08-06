@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/brainagent.jpg" alt="Brainagent Banner" width="100%">
+  <img src="assets/braintux.jpg" alt="braintux Banner" width="100%">
 </p>
 
-# brainagent
+# braintux
 ### [ENG]  OpenAI-compatible Context Proxy combining SQL, vector search and plugins for LLMs. 
 
-[Why the Brainagant was created. ](./brainagent-why.md).
+[Why the Brainagant was created. ](./braintux-why.md).
 
 ##  1. Setting up the Vector Database (Qdrant)
 The vector database is responsible for semantic search across your document chunks.
@@ -27,11 +27,11 @@ Once the metadata is in the SQL database, you must index the content for semanti
     Indexing Documents: Execute rag_manager.py. This script reads the Markdown files, creates overlapping text chunks (to prevent information loss at boundaries), and performs a vector upsert into Qdrant.
     Monitor Status: Use check-rag.py to verify the total count of indexed vectors and ensure the collection status is healthy.
 
-4. Starting the Brainagent Flask Proxy
+4. Starting the braintux Flask Proxy
 This is the core middleware component that processes incoming requests.
 
     Environment Setup: Before starting, export the URL for your embedding model (e.g., your Ollama instance): export EMBEDDING_URL="http://xxx.xxx.xxx.xxx:11434".
-    Start the Server: Launch the proxy using granit-brainagent.py (or brainagent.py as found in the repository).
+    Start the Server: Launch the proxy using granit-braintux.py (or braintux.py as found in the repository).
     How it Works: The proxy receives a request, executes a cleaned SQL search first, enriches it with RAG context if needed, and then forwards the augmented prompt to the LLM.
 
 Overview of Key Scripts
@@ -58,13 +58,13 @@ Note: Ensure that ports 6333 (Qdrant) and 5432 (PostgreSQL) are open and accessi
 
 -----
 
-###  [DEU] Brainagent ist ein OpenAI-kompatibler Context-Proxy für  LLMs. Er kombiniert SQL, Vektorsuche und Plugins, bevor eine Anfrage an das eigentliche Modell weitergeleitet wird.  
+###  [DEU] braintux ist ein OpenAI-kompatibler Context-Proxy für  LLMs. Er kombiniert SQL, Vektorsuche und Plugins, bevor eine Anfrage an das eigentliche Modell weitergeleitet wird.  
 
-[Warum de rBrainagent entstanden ist. ](./de-brainagent-warum.md).
+[Warum de rbraintux entstanden ist. ](./de-braintux-warum.md).
 
 ## Anleitung: 
-Brainagent: Installations- und Konfigurationsleitfaden
-Der Brainagent fungiert als Middleware-Proxy, der Anfragen an LLMs (wie Ollama) durch eine Kombination aus relationaler SQL-Suche und Vektor-RAG (Retrieval-Augmented Generation) mit Kontext anreichert.
+braintux: Installations- und Konfigurationsleitfaden
+Der braintux fungiert als Middleware-Proxy, der Anfragen an LLMs (wie Ollama) durch eine Kombination aus relationaler SQL-Suche und Vektor-RAG (Retrieval-Augmented Generation) mit Kontext anreichert.
 1. Vektordatenbank (Qdrant) einrichten
 Die Vektordatenbank speichert Dokument-Chunks für die semantische Suche.
 
@@ -86,11 +86,11 @@ Nachdem die SQL-Daten vorhanden sind, müssen die Inhalte für die Vektorsuche a
     Indizierung: Starte rag_manager.py. Das Tool liest die Markdown-Dateien ein, erstellt überlappende Text-Chunks (um Informationsverlust an den Schnittstellen zu vermeiden) und lädt diese in Qdrant hoch.
     Status prüfen: Mit check-rag.py kannst du die Anzahl der erfolgreich indizierten Vektoren und den allgemeinen Status der Collection überwachen.
 
-4. Brainagent Flask-Proxy starten
+4. braintux Flask-Proxy starten
 Dies ist die zentrale Komponente, die zwischen deinem Client (z. B. OpenWebUI) und dem LLM-Backend sitzt.
 
     Umgebungsvariablen: Setze die URL für dein Embedding-Modell (z. B. Ollama): export EMBEDDING_URL="http://xxx.xxx.xxx.xxx:11434".
-    Server-Start: Starte den Proxy mit granit-brainagent.py (oder brainagent.py).
+    Server-Start: Starte den Proxy mit granit-braintux.py (oder braintux.py).
     Funktionsweise: Der Proxy nimmt Anfragen entgegen, führt zuerst eine SQL-Suche durch, ergänzt diese bei Bedarf um den Vektorkontext und leitet die finale Anfrage an das Backend weiter.
 
 Übersicht der wichtigsten Werkzeuge im Repository
