@@ -1,6 +1,6 @@
-#  [DEU] Die Geschichte des Brainagents
+#  [DEU] Die Geschichte des Braintux
 
-Am Anfang hatte ich noch gar nicht vor, einen „Brainagent" zu entwickeln. Ich wollte lediglich lernen, wie die Mechanismen hinter einer KI funktionieren – lokal mit Ollama, nicht in der Cloud. Dabei merkte ich schnell: kleine Modelle halluzinieren ständig.
+Am Anfang hatte ich noch gar nicht vor, einen „Braintux" zu entwickeln. Ich wollte lediglich lernen, wie die Mechanismen hinter einer KI funktionieren – lokal mit Ollama, nicht in der Cloud. Dabei merkte ich schnell: kleine Modelle halluzinieren ständig.
 
 Dann las ich über RAG (Retrieval-Augmented Generation). Das Verfahren sollte genau das Problem lösen. Meine ersten Versuche waren vielversprechend; ich probierte Flowise aus, ein Framework zur Erstellung von RAG-Systemen.
 
@@ -8,13 +8,13 @@ Das erwies sich jedoch als Sackgasse. Flowise stürzte ständig ab. Auch Dify wa
 
 Da ich nun zwei Frameworks getestet hatte und mit beiden nicht zufrieden war, installierte ich mir eine Vektordatenbank und importierte meinen DocMost-Export. Open WebUI konnte RAG-Systeme verarbeiten – also dachte ich, ich schließe meine Vektordatenbank direkt dort an. Nach etwa fünf Stunden stellte ich fest: Das funktionierte überhaupt nicht wie erhofft.
 
-Zuvor hatte ich mir jedoch bereits verschiedene kleine Miniproxies mithilfe von KI-Coding-Tools gebaut, und diese funktionierten einwandfrei. Was lag also näher, als einen eigenen Proxy zu bauen, um meine Vektordatenbank an Open WebUI anzubinden? Damit war die Idee des „Brainagent" geboren.
+Zuvor hatte ich mir jedoch bereits verschiedene kleine Miniproxies mithilfe von KI-Coding-Tools gebaut, und diese funktionierten einwandfrei. Was lag also näher, als einen eigenen Proxy zu bauen, um meine Vektordatenbank an Open WebUI anzubinden? Damit war die Idee des „Braintux" geboren.
 
 ---
 
-## Warum Brainagent: Die KI mit dem „Fakten-Gedächtnis"
+## Warum Braintux: Die KI mit dem „Fakten-Gedächtnis"
 
-Mein Brainagent ist im Grunde ein intelligenter Vermittler – ein Proxy, der genau zwischen der Benutzeroberfläche und dem lokalen KI-Modell sitzt. Der Clou: Die KI darf nicht einfach drauf los raten. Bevor sie eine Antwort gibt, muss sie erst in zwei verschiedenen Archiven nachschlagen.
+Mein Braintux ist im Grunde ein intelligenter Vermittler – ein Proxy, der genau zwischen der Benutzeroberfläche und dem lokalen KI-Modell sitzt. Der Clou: Die KI darf nicht einfach drauf los raten. Bevor sie eine Antwort gibt, muss sie erst in zwei verschiedenen Archiven nachschlagen.
 
 ### Zuerst tritt der „Fakten-Check" in Aktion
 
