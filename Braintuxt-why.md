@@ -1,6 +1,6 @@
-#  [ENG] The Story of the Brainagent
+#  [ENG] The Story of the Braintux
 
-In the beginning, I didn't plan on developing a "Brainagent" at all. I simply wanted to learn how the mechanisms behind an AI work—locally with Ollama, not in the cloud. I quickly noticed that small models hallucinate constantly.
+In the beginning, I didn't plan on developing a "Braintux" at all. I simply wanted to learn how the mechanisms behind an AI work—locally with Ollama, not in the cloud. I quickly noticed that small models hallucinate constantly.
 
 Then I read about RAG (Retrieval-Augmented Generation). This method was supposed to solve precisely that problem. My first attempts were promising; I tried Flowise, a framework for creating RAG systems.
 
@@ -8,10 +8,10 @@ However, that turned out to be a dead end. Flowise kept crashing. Dify also look
 
 Since I had now tested two frameworks and was satisfied with neither, I installed a vector database and imported my DocMost export. Open WebUI could process RAG systems—so I thought I would connect my vector database directly there. After about five hours, I realized: that didn't work at all as hoped.
 
-Before that, however, I had already built various small miniproxies using AI coding tools, and they worked flawlessly. So what could be more natural than building my own proxy to connect my vector database to Open WebUI? With that, the idea of the "Brainagent" was born.
-Why Brainagent: The AI with a "Fact Memory"
+Before that, however, I had already built various small miniproxies using AI coding tools, and they worked flawlessly. So what could be more natural than building my own proxy to connect my vector database to Open WebUI? With that, the idea of the "Braintux" was born.
+Why Braintux: The AI with a "Fact Memory"
 
-My Brainagent is basically an intelligent mediator—a proxy that sits right between the user interface and the local AI model. The clever part: the AI isn't allowed to just guess at random. Before it gives an answer, it first has to look things up in two different archives.
+My Braintux is basically an intelligent mediator—a proxy that sits right between the user interface and the local AI model. The clever part: the AI isn't allowed to just guess at random. Before it gives an answer, it first has to look things up in two different archives.
 First, the "Fact Check" comes into action
 
 A special Postgres plugin—imagine a digital filing cabinet containing hard data like IP addresses or hardware lists. The system uses intelligent full-text search and evaluates which match fits the question best. So if I ask for the IP address of my SSH server, the agent finds the exact number in the files instead of guessing.
