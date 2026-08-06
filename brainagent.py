@@ -10,7 +10,7 @@ import re
 from flask import Flask, request, jsonify
 
 # Konfiguration (unverändert)
-PROJECT_NAME = "Brainagent"
+PROJECT_NAME = "Braintux"
 VERSION = "0.0.21"
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://xxx.xxx.xxx.xxx:11434") 
 EMBEDDING_URL = os.getenv("EMBEDDING_URL", "http://xxx.xxx.xxx.xxx:11434") 
