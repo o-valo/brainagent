@@ -2,10 +2,10 @@
   <img src="assets/braintux.jpg" alt="braintux Banner" width="100%">
 </p>
 
-# braintux
+# Braintux
 ### [ENG]  OpenAI-compatible Context Proxy combining SQL, vector search and plugins for LLMs. 
 
-[Why the Brainagant was created. ](./braintux-why.md).
+[Why the braintux was created. ](./braintux-why.md).
 
 ##  1. Setting up the Vector Database (Qdrant)
 The vector database is responsible for semantic search across your document chunks.
